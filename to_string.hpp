@@ -63,6 +63,15 @@ namespace utils {
       oss << t;
       return oss.str();
   }
+
+  std::string to_string(char const& ch) {
+    std::string s(1, ch);
+    return s;
+  }
+
+  std::string to_string (bool const& b) {
+    return (b == true ? "true" : "false");
+  }
 } // utils
 
 #endif
