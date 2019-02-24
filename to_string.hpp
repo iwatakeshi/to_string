@@ -46,30 +46,30 @@ namespace utils {
 
   // 1-  std::to_string is valid on T
   template<typename T, typename std::enable_if<has_std_to_string<T>, int>::type = 0>
-  std::string to_string(T const& t) {
+  inline std::string to_string(T const& t) {
       return std::to_string(t);
   }
 
   // 2-  std::to_string is not valid on T, but to_string is
   template<typename T, typename std::enable_if<!has_std_to_string<T> && has_to_string<T>, int>::type = 0>
-  std::string to_string(T const& t) {
+  inline std::string to_string(T const& t) {
       return to_string(t);
   }
 
   // 3-  neither std::string nor to_string work on T, let's stream it then
   template<typename T, typename std::enable_if<!has_std_to_string<T> && !has_to_string<T> && has_ostringstream<T>, int>::type = 0>
-  std::string to_string(T const& t) {
+  inline std::string to_string(T const& t) {
       std::ostringstream oss;
       oss << t;
       return oss.str();
   }
 
-  std::string to_string(char const& ch) {
+  inline std::string to_string(char const& ch) {
     std::string s(1, ch);
     return s;
   }
 
-  std::string to_string (bool const& b) {
+  inline std::string to_string (bool const& b) {
     return (b == true ? "true" : "false");
   }
 } // utils
