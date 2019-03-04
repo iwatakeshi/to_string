@@ -16,7 +16,7 @@ You can also add a [version constraint](https://github.com/LoopPerfect/buckaroo/
 ## Example
 
 ```cpp
-#include "to_string.hpp"
+#include <to_string.hpp>
 #include <iostream>
 using namespace stdlib;
 int main() {
