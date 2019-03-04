@@ -1,9 +1,9 @@
-#ifndef UTILS_TO_STRING_H
-#define UTILS_TO_STRING_H
+#ifndef STD_LIB_TO_STRING_H
+#define STD_LIB_TO_STRING_H
 #include <string>
 #include <sstream>
 
-namespace utils {
+namespace stdlib {
   /**
    * Credits
    * https://www.fluentcpp.com/2017/06/06/using-tostring-custom-types-cpp/
@@ -65,12 +65,19 @@ namespace utils {
   }
 
   inline std::string to_string(char const& ch) {
-    std::string s(1, ch);
-    return s;
+    return std::string(1, ch);
   }
 
   inline std::string to_string (bool const& b) {
     return (b == true ? "true" : "false");
+  }
+
+  inline std::string to_string (const std::string& b) {
+    return b;
+  }
+
+  inline std::string to_string (const char* b) {
+    return std::string(b);
   }
 } // utils
 
