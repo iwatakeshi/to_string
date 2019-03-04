@@ -18,11 +18,11 @@ You can also add a [version constraint](https://github.com/LoopPerfect/buckaroo/
 ```cpp
 #include "to_string.hpp"
 #include <iostream>
-
+using namespace stdlib;
 int main() {
    
-   std::cout << utils::to_string(true) << std::endl; // => true
-   std::cout << utils::to_string('a') << std::endl; // => a
+   std::cout << to_string(true) << std::endl; // => true
+   std::cout << to_string('a') << std::endl; // => a
   
   return 0;
 }
