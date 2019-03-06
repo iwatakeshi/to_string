@@ -18,12 +18,30 @@ You can also add a [version constraint](https://github.com/LoopPerfect/buckaroo/
 ```cpp
 #include <to_string.hpp>
 #include <iostream>
+#include <ostream>
 using namespace stdlib;
+
+// Override the '<<' operator
+struct example {
+  example() {};
+  friend std::ostream operator << (std::ostream& os, const example& other) {
+    os << "example" << std::endl;
+    return os;
+  }
+};
+
+// or define a to_string in std
+std::string std::to_string(const example&) {
+  return "example";
+}
+
 int main() {
-   
+   std::cout << to_string(1) << std::endl => 1
    std::cout << to_string(true) << std::endl; // => true
    std::cout << to_string('a') << std::endl; // => a
-  
+   std::cout << to_string("hello world") << std::endl; // => hello world
+   std::cout << to_string(std::string("hello world")) << std::endl; // => hello world
+   std::cout << to_string(example()) << std::endl; // => example
   return 0;
 }
 ```
