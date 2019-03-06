@@ -1,5 +1,5 @@
 # to_string
-A `to_string()` helper for c++
+A `to_string()` helper for C++
 
 This library is based on this [article](https://www.fluentcpp.com/2017/06/06/using-tostring-custom-types-cpp/).
 
