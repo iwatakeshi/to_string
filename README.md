@@ -24,7 +24,7 @@ using namespace stdlib;
 // Override the '<<' operator
 struct example {
   example() {};
-  friend std::ostream operator << (std::ostream& os, const example& other) {
+  friend std::ostream operator << (std::ostream& os, const example&) {
     os << "example" << std::endl;
     return os;
   }
